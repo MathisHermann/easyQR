@@ -1,0 +1,477 @@
+<!--
+  ~ Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+  ~ All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>easyQR - create</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+</head>
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="../">
+            <img id="navbar-logo" src="../assets/img/easy%20qr%20(3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"
+                  style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+
+                <li class="nav-item" id="parent-button-dashboard">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/dashboard">Dashboard</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-settings">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/user/settings">Profile Settings</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-logout">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/logout">Logout</a>
+                </li>
+                <li class="nav-item" id="parent-button-login">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/login">Login</a>
+                </li>
+                <li class="nav-item" id="parent-button-signup">
+                    <a class="nav-link" id="button-signup" style="background: #ff4929;" href="/register">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="features-boxed"
+     style="margin-bottom: 0px;background: rgb(242,242,242);margin-left: 10px;margin-right: 10px;">
+    <div class="container" style="margin-top: -10px;background: #f2f2f2;">
+        <div class="intro">
+            <h2 class="text-center"><strong>CREATE YOUR QR-CODE</strong><br></h2>
+            <p class="text-center" style="margin-top: -27px;">We offer a variety of different QR Code variants and we
+                are always striving to offer new types. Create your QR Code now!</p>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 50px;margin-bottom: 0px;text-align: center;">
+        <div class="row" style="margin-right: 0px;text-align: center; flex-wrap: nowrap;justify-content: center;">
+            <div class="col" style="margin-left: 0px; flex-grow: inherit;">
+                <div class="dropdown">
+                    <select id="qr-selector">
+                        <option value="url-qr-selection">URL QR</option>
+                        <option value="wifi-qr-selection">Wifi QR</option>
+                        <option value="call-qr-selection">Call QR</option>
+                        <option value="email-qr-selection">Email QR</option>
+                        <option value="text-qr-selection">Text QR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col" style="margin-left: 0px;margin-right: 0px; flex-grow: inherit;">
+
+                <div class="hidden current" id="url-qr-selection">
+                    <input id="url-input" placeholder="easyqr.herokuapp.com">
+                    <div class="div-checkbox-redirect">
+                    <input type="checkbox" id="checkbox-redirect">
+                    <label for="checkbox-redirect" id="label-checkbox-redirect"> Create redirect </label>
+                </div>
+                </div>
+
+                <div class="hidden" id="wifi-qr-selection">
+                    <div>
+                        <input style="width: fit-content;" id="wifi-ssid-input" placeholder="Wifi SSID">
+                        <input style="width: fit-content;" id="wifi-password-input" placeholder="Wifi Password">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" style="width: fit-content;" type="radio"
+                               name="inlineRadioOptions" id="wifi-wpa-input"
+                               value="wpa" checked>
+                        <label class="form-check-label mr-3" for="wifi-wpa-input">WPA</label>
+
+                        <input class="form-check-input" style="width: fit-content;" type="radio"
+                               name="inlineRadioOptions" id="wifi-wep-input"
+                               value="wep">
+                        <label class="form-check-label mr-3" for="wifi-wep-input">WEP</label>
+
+                        <input class="form-check-input" style="width: fit-content;" type="radio"
+                               name="inlineRadioOptions" id="wifi-none-input"
+                               value="">
+                        <label class="form-check-label" for="wifi-none-input">None</label>
+                    </div>
+                </div>
+
+                <div class="hidden" id="call-qr-selection">
+                    <input id="call-input" placeholder="+41 023 45 67">
+                </div>
+
+                <div class="hidden" id="email-qr-selection">
+                    <input id="email-address-input" type="email" name="email" placeholder="Receiver Address">
+                    <input id="email-subject-input" placeholder="E-Mail Subject">
+                    <textarea id="email-body-input" placeholder="Message Text"></textarea>
+                </div>
+
+                <div class="hidden" id="text-qr-selection">
+                    <textarea id="text-input" placeholder="Your text"></textarea>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 31px;margin-bottom: 0px;text-align: center;">
+        <div class="row" style="margin-right: 0px;text-align: center;justify-content: center;">
+            <div class="col" style="margin-left: 15px; flex-grow: inherit;">
+                <h1 class="text-left" style="font-size: 20px;text-align: left;">Preview:</h1>
+            </div>
+            <div id="qrcode">
+                <canvas id="qr-code"></canvas>
+            </div>
+            <!-- <div class="col" style="margin-left: 0px;margin-right: 50px;"><img src="../assets/img/150.png"></div> -->
+        </div>
+    </div>
+    <div class="container"
+         style="margin-top: 50px;margin-bottom: 0px;text-align: left;padding-bottom: 80px;padding-right: 0px;width: 340px;">
+        <a id="download" download="easyQR-code.png">
+            <button class="btn btn-primary" id="button-download-qr-code"
+                    type="button"
+                    style="margin-right: 3px;background: rgb(255,73,41);border-style: solid;border-color: rgb(255,73,41);"
+                    onClick="download()"
+                    download="">Download as png
+            </button>
+        </a>
+        <button class="btn btn-primary" type="button" id="button-add-to-dashboard"
+                style="margin-left: 3px;background: rgb(255,73,41);border-style: none;">Save to Dashboard
+        </button>
+    </div>
+</div>
+
+<div class="highlight-phone"
+     style="margin-bottom: 8px;margin-right: 10px;margin-left: 10px;background: rgb(248,47,12);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="intro">
+                    <h2 style="color: rgb(255,255,255);">QR-Code Dashboard</h2>
+                    <p style="color: rgb(211,211,211);">Create your free EASYQR account now and save your QR codes in
+                        your personal dashboard. As an additional benefit you can customize the URLs of your URL QR
+                        Codes in the Dashboard.</p><a
+                        class="btn btn-primary" role="button" href="/register" style="background: rgb(0,0,0);">sign up
+                    now</a></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="d-none d-md-block phone-mockup"><img class="device"
+                                                                 src="../assets/img/DASHBOARD_iphonexspacegrey_portrait.png"
+                                                                 style="width: 537px;margin-top: -45px;margin-right: 0px;margin-left: -70px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="features-boxed">
+    <div class="container">
+        <div class="intro"></div>
+    </div>
+</div>
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br></p>
+        </div>
+    </footer>
+</div>
+
+
+<div class="modal fade" role="dialog" tabindex="-1" id="error-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="color: black !important">
+                <h4 class="text-white" style="color: black !important">You're not logged in!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-footer">
+                <div class="button-group">
+                    <a href="/register">
+                        <button class="btn btn-warning btn-block" style="width: 100px" type="button">Sign Up</button>
+                    </a>
+                    <a href="/login">
+                        <button class="btn btn-warning btn-block" style="width: 100px" type="button">Log In</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="result-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="color: black !important">
+                <h4 class="text-white" style="color: black !important">QR-Code successfully added to dashboard.</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="text-truncate text-black-50" id="result-text">
+
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <div class="button-group">
+                    <button class="btn btn-success btn-block" style="width: 100px" type="button"
+                            data-dismiss="modal">Close
+                    </button>
+                    <button class="btn btn-success btn-block" type="button"
+                            onclick="window.location.href = '../dashboard'">Dashboard
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+<!-- QR Code -->
+<script>
+
+    // qrContent is usually used for the content.
+    var qrContent;
+    // if a redirect is created, the url that is redirected to is temporarily stored as qrURLContent
+    var qrURLContent = "na";
+    var qrType;
+
+    var qr;
+
+    (function () {
+        qr = new QRious({
+            element: document.getElementById('qr-code'),
+            size: 200,
+            value: 'easyqr.herokuapp.com'
+        });
+    })();
+
+
+    $('#url-qr-selection').on('input', function () {
+
+        qrType = "url";
+        qrContent = document.getElementById('url-input').value;
+        qrURLContent = qrContent;
+        if ($('#checkbox-redirect').is(':checked')) {
+            qrType = "url-redirect";
+            qrURLContent = "easyqr.herokuapp.com/code/" + Date.now();
+        }
+
+        qr.set({
+            foreground: 'black',
+            size: 200,
+            value: qrURLContent
+        });
+    });
+
+    $('#wifi-qr-selection').on('input', function () {
+        qrType = "wifi";
+        var wifiSsid = document.getElementById('wifi-ssid-input').value;
+        var wifiPassword = document.getElementById('wifi-password-input').value;
+        var wifiEncryptionWpa = $("#wifi-wpa-input").is(':checked');
+        var wifiEncryptionWep = $("#wifi-wep-input").is(':checked');
+        var wifiEncryptionNone = $("#wifi-none-input").is(':checked');
+        var wifiEncryption = '';
+
+        if (wifiEncryptionWpa)
+            wifiEncryption = "WPA"
+        else if (wifiEncryptionWep)
+            wifiEncryption = "WEP"
+
+        qrContent = "WIFI:S:" + wifiSsid + ";T:" + wifiEncryption + ";P:" + wifiPassword + ";;";
+        if (wifiEncryptionNone) {
+            $("#wifi-password-input").hide();
+            qrContent = "WIFI:S:" + wifiSsid + ";T:nopass;;";
+        } else {
+            $("#wifi-password-input").show();
+        }
+        // WIFI:S:<SSID>;T:<WPA|WEP|>;P:<password>;;
+        qr.set({
+            foreground: 'black',
+            size: 200,
+            value: qrContent
+        });
+
+    });
+
+    $('#call-qr-selection').on('input', function () {
+        let entryValid = true;
+
+        qrType = "call";
+        qrContent = document.getElementById('call-input').value;
+
+        for (let i = 0; i < qrContent.length && entryValid; i++)
+            if (!(/[+0-9]/.test(qrContent.charAt(i)))) {
+                $("#button-add-to-dashboard").attr('disabled', true);
+                $("#button-download-qr-code").attr('disabled', true);
+                entryValid = false;
+            } else {
+                $("#button-add-to-dashboard").attr('disabled', false);
+                $("#button-download-qr-code").attr('disabled', false);
+            }
+
+        if (!entryValid)
+            alert("Cannot enter other characters than numbers and a + (plus) sign. [0-9 +]");
+
+        qr.set({
+            foreground: 'black',
+            size: 200,
+            value: qrContent
+        });
+    });
+
+    $('#email-qr-selection').on('input', function () {
+        qrType = "email";
+        var emailAddress = document.getElementById('email-address-input').value;
+        var subject = document.getElementById('email-subject-input').value;
+        var body = document.getElementById('email-body-input').value;
+
+        qrContent = "mailto:" + emailAddress + "?subject=" + subject + "&body=" + body;
+        qr.set({
+            foreground: 'black',
+            size: 200,
+            value: qrContent
+        });
+    });
+
+    $('#text-qr-selection').on('input', function () {
+        qrType = "text";
+        qrContent = document.getElementById('text-input').value;
+        qr.set({
+            foreground: 'black',
+            size: 200,
+            value: qrContent
+        });
+    });
+
+    var loggedIn = false;
+    validateLogin(function (result) {
+        loggedIn = result;
+    });
+
+    $("#button-add-to-dashboard").on('click', function () {
+
+        if (loggedIn) {
+            // add qr code to dashboard
+            var canvas = document.getElementById("qr-code");
+
+            const showConfirmation = async () => {
+                const result = await postQrCode(canvas, qrType, qrContent, qrURLContent);
+                console.log(result);
+
+                $("#result-modal").modal('show');
+                $("#result-text").text(result.message)
+
+            }
+
+            showConfirmation();
+
+        } else {
+            $("#error-modal").modal('show');
+        }
+    });
+
+    function download() {
+        var download = document.getElementById("download");
+        qrImage = document.getElementById("qr-code").toDataURL("image/png")
+            .replace("image/png", "image/octet-stream");
+        download.setAttribute("href", qrImage);
+    }
+
+</script>
+
+<!-- Selector of QR Code type -->
+<script>
+    <!--qr-code selector-->
+    var select = document.getElementById('qr-selector');
+    var x;
+
+    select.addEventListener("change", function () {
+
+        x = select.options[select.selectedIndex].value;
+
+        document.getElementsByClassName('current')[0].classList.remove('current');
+        document.getElementById(x).classList.add('current');
+
+    });
+</script>
+
+<!-- Buttons hide and show in DOM -->
+<script>
+    $("#parent-button-logout").hide();
+    $("#parent-button-settings").hide();
+    $("#parent-button-dashboard").hide();
+
+    $(document).ready(function () {
+        validateLogin(function (result) {
+            if (result) {
+                $("#parent-button-signup").hide();
+                $("#parent-button-login").hide();
+                $("#parent-button-logout").show();
+                $("#parent-button-settings").show();
+                $("#parent-button-dashboard").show();
+                $("#parent-button-faq").show();
+                $("#checkbox-redirect").show();
+                $("#label-checkbox-redirect").show();
+            } else {
+                $("#parent-button-signup").show();
+                $("#parent-button-login").show();
+                $("#parent-button-faq").show();
+                $("#checkbox-redirect").hide();
+                $("#label-checkbox-redirect").hide();
+            }
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

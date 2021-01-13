@@ -1,0 +1,224 @@
+<!--
+  ~ Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+  ~ All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>easyQR - dashboard</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+
+</head>
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="/">
+            <img id="navbar-logo" src="assets/img/easy qr (3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"
+                  style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+
+                <li class="nav-item" id="parent-button-dashboard">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/dashboard">Dashboard</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-settings">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/user/settings">Profile Settings</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-logout">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/logout">Logout</a>
+                </li>
+                <li class="nav-item" id="parent-button-login">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/login">Login</a>
+                </li>
+                <li class="nav-item" id="parent-button-signup">
+                    <a class="nav-link" id="button-signup" style="background: #ff4929;" href="/register">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="dashboard-codes"
+     style="margin-bottom: 0px;background: rgb(242,242,242);margin-right: 10px;margin-left: 10px;">
+
+    <div class="container">
+        <div id="parent-qr-target-editable">
+            <h3>Editable QR-Codes</h3>
+            <div id="qr-target-editable">
+            </div>
+        </div>
+
+        <div id="parent-qr-target-not-editable">
+            <h3>Not Editable QR-Codes</h3>
+            <div id="qr-target-not-editable">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br></p>
+        </div>
+    </footer>
+</div>
+
+<!-- Insert html-template until here, not further!-->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+
+        validateLogin(function (result) {
+            if (!result) {
+                window.location.replace("/");
+            } else {
+                $("#parent-button-signup").hide();
+                $("#parent-button-login").hide();
+                $("#parent-button-logout").show();
+                $("#parent-button-settings").show();
+                $("#parent-button-dashboard").show();
+                $("#parent-button-faq").show();
+            }
+        });
+
+        // Get each single QR-Code and append it to the DOM
+        getQrCodes(function (result) {
+            for (let i = 1; i < result.length; i++) {
+
+                let qrCodeName = result[i];
+                let qrCodeContent = result[++i];
+                let qrCodeType = result[++i];
+                let qrRedirectGoal = result[++i];
+                let qrCodeId = result[++i];
+
+                console.log(qrCodeContent + ", " + qrCodeType)
+
+                let url = "api/downloadQrCode/" + result[0] + "/" + qrCodeName;
+                let image = new Image();
+                image.src = url;
+
+                // Create the most outer container
+                let parentContainer = document.createElement('div');
+                parentContainer.classList.add('div-code-dashboard', 'd-flex', 'flex-wrap');
+
+                // Container with the image
+                let leftChildContainer = document.createElement('div');
+                leftChildContainer.classList.add('p-2');
+
+                // Container with all other information and buttons
+                let rightChildContainer = document.createElement('div');
+                rightChildContainer.classList.add('p-2', 'd-flex', 'flex-column');
+
+                parentContainer.appendChild(leftChildContainer);
+                parentContainer.appendChild(rightChildContainer)
+
+                // Create the text that is displayed with the image
+                let ulContainer = document.createElement('ul');
+                let textContent = document.createElement('li');
+                let textType = document.createElement('li');
+
+                textContent.innerHTML = "Content: <b>" + qrCodeContent + "</b>";
+                textType.innerHTML = "Type: <b>" + qrCodeType + "</b>";
+
+                ulContainer.classList.add('m-2', 'text-dark', 'list-unstyled');
+                ulContainer.append(textContent, textType);
+
+
+                let downloadButton = document.createElement('button');
+                downloadButton.textContent = "download";
+                downloadButton.classList.add('downloadbtn-code-dashboard', 'm-2');
+                downloadButton.onclick = function () {
+                    location.replace("api/downloadQrCode/" + result[0] + "/" + qrCodeName);
+                };
+
+                let deleteButton = document.createElement('button');
+                deleteButton.textContent = "delete";
+                deleteButton.classList.add('deletebtn-code-dashboard', 'm-2');
+                deleteButton.onclick = function () {
+                    deleteQrCode(qrCodeId);
+                    location.reload();
+                };
+
+                leftChildContainer.appendChild(image);
+
+                // Only qr codes of the type url can be edited in a later instance. The others can only be viewed and downloaded.
+                if (qrCodeType.valueOf().trim() === 'url-redirect') {
+
+                    textContent.innerHTML = "Target URL: <b>" + qrCodeContent + "</b> " + String.fromCodePoint(8212) + " URL in QR-Code: <b>" + qrRedirectGoal + "</b>";
+                    textContent.classList.add('content-code-dashboard');
+
+                    let editButton = document.createElement('button');
+                    editButton.textContent = "edit";
+                    editButton.classList.add('editbtn-code-dashboard', 'm-2');
+                    editButton.onclick = function () {
+                        location.replace("../code/edit?user=" + result[0] + "&fileName=" + qrCodeName + "&fileContent="
+                            + qrCodeContent + "&fileTarget=" + qrRedirectGoal);
+                    };
+                    rightChildContainer.appendChild(editButton);
+
+                    $('#qr-target-editable').append(parentContainer);
+
+                } else {
+                    $('#qr-target-not-editable').append(parentContainer);
+                }
+
+                rightChildContainer.appendChild(downloadButton);
+                rightChildContainer.appendChild(deleteButton);
+                rightChildContainer.appendChild(ulContainer);
+
+            }
+        });
+
+    });
+</script>
+</body>
+
+</html>

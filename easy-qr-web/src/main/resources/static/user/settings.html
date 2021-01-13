@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="height: 609px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>easyQR</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
+
+</head>
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="../">
+            <img id="navbar-logo" src="../assets/img/easy qr (3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"
+                  style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+
+                <li class="nav-item" id="parent-button-dashboard">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/dashboard">Dashboard</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-settings">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/user/settings">Profile Settings</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-logout">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/logout">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;">
+    <div class="intro">
+        <h2 class="text-center">Profile Settings</h2>
+    </div>
+
+
+    <div class="contact-clean">
+        <form method="post" id="change-settings-form">
+            <h2 class="text-center">Profile Information</h2>
+            <div class="form-group">
+                <label for="input-name">Name</label>
+                <input type="text" class="form-control" id="input-name" name="name" placeholder="Set a new name"/>
+            </div>
+            <div class="form-group">
+                <label for="input-email">Email address</label>
+                <input type="email" class="form-control" id="input-email" name="email" placeholder="Set a new email address"/>
+            </div>
+            <div class="form-group">
+                <label for="input-password">Password</label>
+                <input type="password" class="form-control" id="input-password" name="password" placeholder="Set a new password"/>
+                <small id="password-help" class="form-text text-muted">To change the settings, the current password a new one must be entered.</small>
+            </div>
+            <h2 class="text-center">Further Information</h2>
+            <div class="form-group">
+                <label for="input-mobile-number">Mobile Number</label>
+                <input type="tel" class="form-control" id="input-mobile-number" name="mobile_number" placeholder="Set a mobile number"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Submit changes</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br></p>
+        </div>
+    </footer>
+</div>
+
+
+<div class="modal fade" role="dialog" tabindex="-1" id="error-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #e85e6c;">
+                <h1 class="text-white">Ooops!</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-truncate text-black-50" id="error-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning btn-block" type="button" data-dismiss="modal">Try Again</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/script.js"></script>
+
+<script language="JavaScript">
+    // redirect to start screen
+    validateLogin(function (result) {
+        if (!result) {
+            window.location.replace("/");
+        }
+    });
+</script>
+
+<script language="JavaScript">
+    // change profile settings
+    $(document).ready(function () {
+
+        getProfile(function (result) {
+            console.log(result);
+            $('input[name=name]').val(result["name"]);
+            $('input[name=email]').val(result["email"]);
+            $('input[name=mobile_number]').val(result["mobileNumber"]);
+        });
+
+        $("#change-settings-form").submit(function (event) {
+            event.preventDefault();
+
+            let newPassword = $('input[name=password]').val();
+
+            if (newPassword.length > 0) {
+                putProfile($('input[name=name]').val(), $('input[name=email]').val(), newPassword,
+                    $('input[name=mobile_number]').val(), function (result) {
+                        window.location.replace("/user/settings");
+                    }, function (error) {
+                        $("#error-modal").modal('show');
+                        $("#error-text").text("Credentials not correct or missing!");
+                    });
+            } else {
+                $("#error-modal").modal('show');
+                $("#error-text").text("Password must be entered!");
+            }
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

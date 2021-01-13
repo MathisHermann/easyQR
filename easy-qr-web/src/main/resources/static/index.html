@@ -1,0 +1,247 @@
+<!--
+ ~ Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+ ~ All rights reserved.
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>easyQR | welcome!</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+</head>
+
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="/">
+            <img id="navbar-logo" src="assets/img/easy qr (3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);"><span
+                class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"
+                                                              style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+
+                <li class="nav-item" id="parent-button-dashboard">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/dashboard">Dashboard</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-settings">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/user/settings">Profile Settings</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-logout">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/logout">Logout</a>
+                </li>
+                <li class="nav-item" id="parent-button-login">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/login">Login</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-signup">
+                    <a class="nav-link" id="button-signup" style="background: #ff4929;" href="/register">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="features-boxed"
+     style="margin-bottom: 0px;background: rgb(242,242,242);margin-right: 10px;margin-left: 10px;">
+    <div class="container" style="margin-top: -10px;">
+        <div class="intro">
+            <h2 class="text-center"><strong>CHOOSE YOUR TYPE</strong><br></h2>
+            <p class="text-center" style="margin-top: -27px;">We offer a variety of different QR Code
+                variants and we are always striving to offer new types. Create your QR Code now!</p>
+        </div>
+
+        <div class="row justify-content-center features" style="margin-bottom: 0px;">
+
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" id="create-url">
+                    <i class="fa fa-link icon" style="color: #ff4929;"></i>
+                    <h3 class="name">URL QR</h3>
+                    <p class="description">Convert your URL to a QR Code now.
+                        Additionally, you can change your URL online at any time using our dashboard.</p>
+                    <a class="learn-more" style="color: #ff4929;">
+                        Create QR-Code»
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" id="create-text">
+                    <i class="fa fa-file-text-o icon" style="color: #ff4929;"></i>
+                    <h3 class="name">TEXT QR</h3>
+                    <p class="description">Create now a text notification using our TEXT QR's.
+                        The right thing if you want to share short info using your QR Code.</p>
+                    <a class="learn-more" style="color: #ff4929;">
+                        Create QR-Code»
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" id="create-wifi">
+                    <i class="fa fa-wifi icon" style="color: #ff4929;"></i>
+                    <h3 class="name">WIFI QR</h3>
+                    <p class="description">With the help of our WIFI QR you and your guests can
+                        from now on log in with a scan directly in the W-Lan.</p>
+                    <a class="learn-more" style="color: #ff4929;">
+                        Create QR-Code»
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" id="create-call">
+                    <i class="fa fa-phone icon" style="color: #ff4929;"></i>
+                    <h3 class="name">CALL QR</h3>
+                    <p class="description">With our Call QR you can offer phone numbers directly as QR Code. Perfect for
+                        your business cards. </p>
+                    <a class="learn-more" style="color: #ff4929;">
+                        Create QR-Code»
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" id="create-email">
+                    <i class="fa fa-send-o icon" style="color: #ff4929;"></i>
+                    <h3 class="name">EMAIL QR</h3>
+                    <p class="description">With the help of our E-Mail QR you can map e-mail addresses including
+                        subject and message as QR Code.</p>
+                    <a class="learn-more" style="color: #ff4929;">
+                        Create QR-Code»
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box" style="padding-bottom: 54px;" id="create-coming-soon">
+                    <i class="fa fa-flask icon" style="color: #ff4929;"></i>
+                    <h3 class="name">COMING SOON</h3>
+                    <p class="description">More QR Code types and other new features will follow soon. Stay tuned and
+                        sign up to our newsletter!</p>
+                    <a class="learn-more" href="#" style="color: rgb(255,73,41);"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="highlight-phone"
+     style="margin-bottom: 8px;margin-right: 10px;margin-left: 10px;background: rgb(248,47,12);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="intro">
+                    <h2 style="color: rgb(255,255,255);">QR-Code Dashboard</h2>
+                    <p style="color: rgb(211,211,211);">Create your free EASYQR account now and save your QR codes in
+                        your personal dashboard. As an additional benefit you can customize the URLs of your URL QR
+                        Codes in the Dashboard.</p><a
+                        class="btn btn-primary" role="button" href="/register" style="background: rgb(0,0,0);">sign up
+                    now</a></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="d-none d-md-block phone-mockup"><img class="device"
+                                                                 src="assets/img/DASHBOARD_iphonexspacegrey_portrait.png"
+                                                                 style="width: 537px;margin-top: -45px;margin-right: 0px;margin-left: -70px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br></p>
+        </div>
+    </footer>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script language="JavaScript">
+
+    $("#parent-button-logout").hide();
+    $("#parent-button-settings").hide();
+    $("#parent-button-dashboard").hide();
+
+    $(document).ready(function () {
+        validateLogin(function (result) {
+            if (result) {
+                $("#parent-button-signup").hide();
+                $("#parent-button-login").hide();
+                $("#parent-button-logout").show();
+                $("#parent-button-settings").show();
+                $("#parent-button-dashboard").show();
+                $("#parent-button-faq").show();
+            } else {
+                $("#parent-button-signup").show();
+                $("#parent-button-login").show();
+                $("#parent-button-faq").show();
+            }
+        });
+
+        $("#create-url").on('click', function () {
+            window.location.href = "/code/create";
+        });
+        $("#create-text").on('click', function () {
+            window.location.href = "/code/create";
+        });
+        $("#create-wifi").on('click', function () {
+            window.location.href = "/code/create";
+        });
+        $("#create-call").on('click', function () {
+            window.location.href = "/code/create";
+        });
+        $("#create-email").on('click', function () {
+            window.location.href = "/code/create";
+        });
+
+        $(".box").hover(
+            function () {
+                $(this).addClass('shadow-lg').css('cursor', 'pointer');
+            }, function () {
+                $(this).removeClass('shadow-lg');
+            }
+        );
+
+    });
+</script>
+</body>
+
+</html>

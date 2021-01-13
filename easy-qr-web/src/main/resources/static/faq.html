@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html style="height: 609px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>easyQR - FAQ</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Features-Blue.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+</head>
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="/">
+            <img id="navbar-logo" src="assets/img/easy qr (3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"
+                  style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+
+                <li class="nav-item" id="parent-button-settings">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/user/settings">Profile Settings</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-logout">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/logout">Logout</a>
+                </li>
+
+                <li class="nav-item" id="parent-button-login">
+                    <a class="btn btn-primary" id="button-login" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/login">Login</a>
+                </li>
+                <li class="nav-item" id="parent-button-signup">
+                    <a class="nav-link pulse animated" id="button-signup" href="/register" style="background: #ff4929;">Sign
+                        Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="faq-parent">
+<div class="faq" style="background: rgb(242,242,242);margin-right: 10px;margin-left: 10px;">
+    <h2 class="text-center" style="font-style: normal;margin-bottom: 30px;">FAQ<br></h2>
+    <button class="accordion">How can I register for an account?</button>
+    <div class="panel">
+        <p>You can register for an EasyQR account at www.easyqr.herokuapp.com/register. There, we need some information so that we can set up an account.       </p>
+    </div>
+
+    <button class="accordion">Why is it not possible to edit my 'Text' QR Code?</button>
+    <div class="panel">
+        <p>Currently it is not yet possible to edit 'text' QR codes in the dashboard. If you want to make a change, you can save a new code and delete the old one.
+        </p>
+    </div>
+
+    <button class="accordion">I have mistakenly deleted my code. Can I undo my action?</button>
+    <div class="panel">
+        <p>Not yet. However, we will soon introduce a trash function so that deleted codes are still accessible.</p>
+    </div>
+</div>
+</div>
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br></p>
+        </div>
+    </footer>
+</div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/script.js"></script>
+
+<!-- Buttons hide and show in DOM -->
+<script>
+    $("#parent-button-logout").hide();
+    $("#parent-button-settings").hide();
+    $("#parent-button-dashboard").hide();
+
+    $(document).ready(function () {
+        validateLogin(function (result) {
+            if (result) {
+                $("#parent-button-signup").hide();
+                $("#parent-button-login").hide();
+                $("#parent-button-logout").show();
+                $("#parent-button-settings").show();
+                $("#parent-button-dashboard").show();
+                $("#parent-button-faq").show();
+            } else {
+                $("#parent-button-signup").show();
+                $("#parent-button-login").show();
+                $("#parent-button-faq").show();
+            }
+        });
+    });
+
+</script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+</body>
+
+</html>

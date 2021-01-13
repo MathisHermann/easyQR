@@ -1,0 +1,178 @@
+<!--
+  ~ Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+  ~ All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>easyQR | login</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png"/>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+
+
+</head>
+
+<body style="margin-right: 0px;padding-right: 0px;padding-left: 0px;">
+
+<!--insert from bootstrap-->
+
+<nav class="navbar navbar-light navbar-expand-md navigation-clean"
+     style="background: #f2f2f2;margin-right: 10px;margin-left: 10px;margin-top: 10px;">
+    <div class="container">
+        <a href="/">
+            <img id="navbar-logo" src="assets/img/easy qr (3).png">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="border-color: rgba(136,136,136,0);color: rgb(0,0,0);">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"
+                  style="color: rgb(0,0,0);filter: brightness(100%);border-color: rgb(0,0,0);"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item">
+
+                <li class="nav-item" id="parent-button-faq">
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/faq">FAQ</a>
+                </li>
+
+                    <a class="btn btn-primary" role="button"
+                       style="background: rgba(0,123,255,0);color: rgb(70,87,101);border-width: 0px;height: 40px;"
+                       href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pulse animated" id="button-signup" href="/register" style="background: #ff4929;">Sign
+                        Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="login-clean" style="background: rgb(242,242,242);margin-right: 10px;margin-left: 10px;">
+    <form method="post" id="login-form">
+        <h2 class="sr-only">Login Form</h2>
+        <h1 style="color: rgb(47,47,47);font-size: 20px;text-align: center;margin-bottom: 35px;">Log in to EasyQR</h1>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+
+        <!-- <div class="form-group">
+         <div class="form-check">
+               <input class="form-check-input" type="checkbox" name="remember"
+                      id="formCheck-1" style="width: auto; height: auto;">
+               <label class="form-check-label" for="formCheck-1">Remember me for 10 days</label>
+           </div>
+       </div>-->
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" style="background: rgb(255,73,41);">Log In</button>
+        </div>
+        <a class="forgot" href="#" style="margin-top: -5px;color: rgb(255,73,41);">Forgot your email or password?</a>
+        <div class="illustration"
+             style="border-bottom: 1px solid rgba(69,69,69,0.15) ;">
+
+        </div>
+        <a class="forgot" href="/register" style="margin-top: 15px;margin-bottom: -25px;">
+            <span
+                    style="text-decoration: underline;">Don't have an account? Sign up</span>
+            <br>
+        </a>
+    </form>
+</div>
+
+
+<div class="footer-dark"
+     style="height: 50px;margin: 0px;padding: 0px;margin-top: -10px;padding-top: 8px;padding-bottom: 4px;background: #f2f2f2;padding-left: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: 10px;">
+    <footer style="height: 15px;">
+        <div class="container">
+            <p class="copyright"
+               style="text-align: center;padding: 0px;margin: 0px;height: 18px;font-size: 11px;color: rgb(0,0,0);opacity: 0.80;margin-top: 10px;">
+                © easyQR — Made with ❤ for the people of the internet.<br>
+            </p>
+        </div>
+    </footer>
+</div>
+
+<div class="modal fade" role="dialog" tabindex="-1" id="error-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #FF4C23;">
+                <h1 class="text-white">Ooops!</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-truncate text-black-50" id="error-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning btn-block" type="button" data-dismiss="modal">Try Again</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script language="JavaScript">
+
+    validateLogin(function (result) {
+        if (result) {
+            window.location.replace("/");
+        }
+    });
+
+
+    $(document).ready(function () {
+        $("#login-form").submit(function (event) {
+            if ($('input[name=email]').val().length != 0 && $('input[name=password]').val().length != 0) {
+                login($('input[name=email]').val(), $('input[name=password]').val(), $('input[name=remember]').is(":checked"), function (result) {
+                    if (result) {
+                        window.location.replace("../dashboard");
+                    } else {
+                        $("#error-modal").modal('show');
+                        $("#error-text").text("Bad credentials!");
+                    }
+                });
+            } else {
+                    $("#error-modal").modal('show');
+                    $("#error-text").text("Enter all credentials!");
+            }
+            event.preventDefault();
+        });
+
+    });
+</script>
+
+
+</body>
+
+</html>
