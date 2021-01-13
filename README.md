@@ -18,7 +18,7 @@ The main functionalities of this application are:
 - Add Codes to your dashboard
 - Manage (edit and delete) entries on your dashboard
 
-The application can be visited at https://easyqr.herokuapp.com
+The application can be visited at https://fhnw-easy-qr.herokuapp.com/
 
 ##  Implemented functionalities
 Implemented are the following features:
